@@ -1,36 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int n,i,j;
+    int n,i;
+    printf("Nhap so luong phan tu: ");
     scanf("%d", &n);
     int arr[n];
-    for ( i = 0; i < n; i++) {
+    printf("Nhap cac phan tu: ");
+    for (i = 0; i < n; i++)
         scanf("%d", &arr[i]);
-    }
-    for (i = 0; i < n - 1; i++) {
-        for (j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    printf("Mang sau khi sap xep tang dan: ");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-    int x;
-    scanf("%d", &x);
+    int value;
+    printf("Nhap gia tri can dem: ");
+    scanf("%d", &value);
+    int count = 0; 
     for ( i = 0; i < n; i++) {
-        if (arr[i] == x) {
-            printf("Phan tu %d duoc tim thay tai vi tri %d", x, i);
-        }
+        if (arr[i] == value)
+            count++;
     }
-    printf("Khong tim thay");
-
-    return 0;
+    printf("%d\n", count);
+   return 0;
 }
 
 
